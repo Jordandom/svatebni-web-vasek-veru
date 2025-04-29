@@ -6,7 +6,7 @@ const Map = () => {
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <H1 className="uppercase">
-        <span className="text-blue decoration-8 underline-offset-3">Poloha</span>
+        <span className="text-secondary decoration-8 underline-offset-3">Poloha</span>
       </H1>
 
       <div className="flex flex-col items-center">

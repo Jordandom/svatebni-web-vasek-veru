@@ -20,7 +20,7 @@ export const Schedule = () => {
       </div>
       <div className="relative z-20 flex flex-col items-center gap-8">
         <H1 className="uppercase">
-          <span className="text-blue decoration-8 underline-offset-3">Harmonogram</span>
+          <span className="text-secondary decoration-8 underline-offset-3">Harmonogram</span>
         </H1>
         <div className="grid grid-cols-1 gap-8">
           {images.map((image) => (
@@ -81,12 +81,6 @@ const images = [
     src: '/camera.svg',
     text: 'Focení a začátek svatebního rautu',
     time: '13:30',
-  },
-  {
-    name: 'lunch',
-    src: '/lunch.svg',
-    text: 'Slavnostní oběd',
-    time: '14:30',
   },
   {
     name: 'dance',

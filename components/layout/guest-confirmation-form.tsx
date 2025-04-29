@@ -34,12 +34,6 @@ const formSchema = z.object({
     required_error: 'Musíte zvolit jednu z možností pro ubytování.',
   }),
   poznamka: z.string().optional(),
-  pocetDeti: z
-    .string({
-      message: 'Počet dětí je povinný pole a musí být větší nebo roven 0.',
-    })
-    .optional(),
-  jmenaDeti: z.string().optional(),
 })
 
 function GuestConfirmationForm() {
@@ -54,8 +48,6 @@ function GuestConfirmationForm() {
       ucast_na_svatbe: undefined,
       ubytovani: undefined,
       poznamka: '',
-      pocetDeti: '',
-      jmenaDeti: '',
     },
   })
 
@@ -112,10 +104,10 @@ function GuestConfirmationForm() {
               control={form.control}
               name="jmeno_prijmeni"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
+                <FormItem className="border-primary flex flex-col items-start gap-4 rounded-md border p-4">
                   <FormLabel className="font-bold">Jméno a příjmení</FormLabel>
                   <FormControl>
-                    <Input className="text-blue" placeholder="Jméno a příjmení" {...field} />
+                    <Input placeholder="Jméno a příjmení" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -125,7 +117,7 @@ function GuestConfirmationForm() {
               control={form.control}
               name="ucast_na_svatbe"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
+                <FormItem className="border-primary flex flex-col items-start gap-4 rounded-md border p-4">
                   <FormLabel className="font-bold">Přijdete na naši svatbu?</FormLabel>
                   <FormControl>
                     <div className="flex items-center gap-4">
@@ -135,7 +127,7 @@ function GuestConfirmationForm() {
                         </FormLabel>
                         <Checkbox
                           id="come-to-wedding-yes"
-                          className="size-6 border-white"
+                          className="border-primary size-6"
                           checked={field.value === 'ano'}
                           onCheckedChange={() => field.onChange('ano')}
                         />
@@ -146,7 +138,7 @@ function GuestConfirmationForm() {
                         </FormLabel>
                         <Checkbox
                           id="come-to-wedding-no"
-                          className="size-6 border-white"
+                          className="border-primary size-6"
                           checked={field.value === 'ne'}
                           onCheckedChange={() => field.onChange('ne')}
                         />
@@ -162,7 +154,7 @@ function GuestConfirmationForm() {
               name="ubytovani"
               render={({ field }) => {
                 return (
-                  <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
+                  <FormItem className="border-primary flex flex-col items-start gap-4 rounded-md border p-4">
                     <FormLabel className="font-bold">
                       Zůstanete přes noc? (ubytování bude zajištěno v místě konání svatby)
                     </FormLabel>
@@ -174,7 +166,7 @@ function GuestConfirmationForm() {
                           </FormLabel>
                           <Checkbox
                             id="stay-over-night-yes"
-                            className="size-6 border-white"
+                            className="border-primary size-6"
                             checked={field.value === 'ano'}
                             onCheckedChange={() => field.onChange('ano')}
                           />
@@ -185,46 +177,13 @@ function GuestConfirmationForm() {
                           </FormLabel>
                           <Checkbox
                             id="stay-over-night-no"
-                            className="size-6 border-white"
+                            className="border-primary size-6"
                             checked={field.value === 'ne'}
                             onCheckedChange={() => field.onChange('ne')}
                           />
                         </div>
                       </div>
                     </FormControl>
-                    <div className="flex w-full flex-col gap-2">
-                      <FormField
-                        control={form.control}
-                        name="pocetDeti"
-                        render={({ field }) => (
-                          <FormItem className="flex flex-col gap-2">
-                            <FormLabel className="font-bold">Počet dětí</FormLabel>
-                            <Input
-                              {...field}
-                              type="number"
-                              min="0"
-                              step="1"
-                              className="text-blue"
-                            />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="jmenaDeti"
-                        render={({ field }) => (
-                          <FormItem className="flex flex-col gap-2">
-                            <FormLabel className="font-bold">Jména dětí</FormLabel>
-                            <Input
-                              {...field}
-                              type="text"
-                              className="text-blue"
-                              placeholder="Jména oddělená čárkou"
-                            />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
                     <FormMessage />
                   </FormItem>
                 )
@@ -234,20 +193,17 @@ function GuestConfirmationForm() {
               control={form.control}
               name="poznamka"
               render={({ field }) => (
-                <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
+                <FormItem className="border-primary flex flex-col items-start gap-4 rounded-md border p-4">
                   <FormLabel className="font-bold">Poznámka</FormLabel>
                   <FormControl>
-                    <Textarea className="text-blue" placeholder="Poznámka" {...field} />
+                    <Textarea placeholder="Poznámka" {...field} />
                   </FormControl>
                 </FormItem>
               )}
             />
           </div>
-          <Button
-            className="bg-primary cursor-pointer border border-white text-2xl"
-            variant="default"
-            type="submit"
-          >
+          <div className="text-2xl">Prosíme, abyste nechali své čtyřnohé miláčky doma.</div>
+          <Button className="bg-secondary cursor-pointer text-2xl" variant="default" type="submit">
             {isLoading ? (
               <Spinner />
             ) : (

@@ -5,7 +5,7 @@ const OurStory = () => {
   return (
     <div className="relative flex w-full flex-col items-center gap-8">
       <H1 className="uppercase">
-        <span className="text-primary/80 decoration-8 underline-offset-3">Náš příběh</span>
+        <span className="text-secondary decoration-8 underline-offset-3">Náš příběh</span>
       </H1>
       <div className="flex flex-col gap-4">
         <div>
