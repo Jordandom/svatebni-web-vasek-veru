@@ -1,15 +1,12 @@
-import Image from "next/image"
+import Image from 'next/image'
 
 export const Hero = () => (
   <Image
-    className="mx-auto my-0"
+    className="mx-auto my-0 h-screen max-w-full"
     priority
-    src="/uvodni-obrazek-transparent-compress.webp"
+    src="/hero-banner.webp"
     width={1920}
     height={1080}
-    alt="Naty a Tom úvodní obrázek"
-    style={{
-      maxWidth: "100%",
-      height: "auto"
-    }} />
+    alt="Vašek a Veru úvodní obrázek"
+  />
 )
