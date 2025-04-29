@@ -2,7 +2,12 @@
 
 import { SparklesCore } from '@/components/ui/sparkles'
 import { H1 } from '@/components/ui/typography'
-import Image from 'next/image'
+import { CalendarHeartIcon } from 'lucide-react'
+import { GiDiamondRing, GiPartyFlags, GiBallPyramid } from 'react-icons/gi'
+import { TbCameraHeart } from 'react-icons/tb'
+import { PiFlowerTulip } from 'react-icons/pi'
+import { LuPartyPopper } from 'react-icons/lu'
+import { BiSolidDrink } from 'react-icons/bi'
 
 export const Schedule = () => {
   return (
@@ -24,37 +29,19 @@ export const Schedule = () => {
         </H1>
         <div className="grid grid-cols-1 gap-8">
           {images.map((image) => (
-            <div key={image.name} className="flex items-center gap-4">
-              <Image
-                src={image.src}
-                width={50}
-                height={50}
-                alt={image.name}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
-              />
-              <div>
+            <div key={image.text} className="flex items-center gap-8">
+              {image.icon}
+              <div className="flex flex-col gap-2">
                 <h3 className="font-bold">{image.text}</h3>
                 <p>{image.time}</p>
               </div>
             </div>
           ))}
           <div className="font-bold">V průběhu dne se také můžete těšit na:</div>
-          {activities.map((activity) => (
-            <div key={activity.name} className="flex items-center gap-4">
-              <Image
-                src={activity.src}
-                width={50}
-                height={50}
-                alt={activity.name}
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                }}
-              />
-              <h3 className="font-bold">{activity.text}</h3>
+          {activities.map(({ icon, text }) => (
+            <div key={text} className="flex items-center gap-8">
+              {icon}
+              <h3 className="font-bold">{text}</h3>
             </div>
           ))}
         </div>
@@ -65,26 +52,22 @@ export const Schedule = () => {
 
 const images = [
   {
-    name: 'heart',
-    src: '/heart.svg',
+    icon: <CalendarHeartIcon className="size-15" />,
     text: 'Příjezd hostů',
     time: 'do 11:00',
   },
   {
-    name: 'rings',
-    src: '/rings.svg',
+    icon: <GiDiamondRing className="size-15" />,
     text: 'Svatební obřad',
     time: '13:00',
   },
   {
-    name: 'camera',
-    src: '/camera.svg',
+    icon: <TbCameraHeart className="size-15" />,
     text: 'Focení a začátek svatebního rautu',
     time: '13:30',
   },
   {
-    name: 'dance',
-    src: '/dance.svg',
+    icon: <GiPartyFlags className="size-15" />,
     text: 'První tanec novomanželů a slavnostní přípitek',
     time: '15:00',
   },
@@ -92,23 +75,19 @@ const images = [
 
 const activities = [
   {
-    name: 'flower-throw',
-    src: '/flower-throw.svg',
+    icon: <PiFlowerTulip className="size-15" />,
     text: 'Vyplétání svatební kytice',
   },
   {
-    name: 'toast',
-    src: '/toast.svg',
+    icon: <LuPartyPopper className="size-15" />,
     text: 'Svatební hru “Rok s novomanželi”',
   },
   {
-    name: 'food',
-    src: '/beer-pong.svg',
+    icon: <GiBallPyramid className="size-15" />,
     text: 'Svatební Beer Pong',
   },
   {
-    name: 'party',
-    src: '/party.svg',
+    icon: <BiSolidDrink className="size-15" />,
     text: 'A hlavně na zábavu až do rána',
   },
 ]
