@@ -113,7 +113,7 @@ function GuestConfirmationForm() {
               name="jmeno_prijmeni"
               render={({ field }) => (
                 <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel>Jméno a příjmení</FormLabel>
+                  <FormLabel className="font-bold">Jméno a příjmení</FormLabel>
                   <FormControl>
                     <Input className="text-blue" placeholder="Jméno a příjmení" {...field} />
                   </FormControl>
@@ -126,23 +126,27 @@ function GuestConfirmationForm() {
               name="ucast_na_svatbe"
               render={({ field }) => (
                 <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel>Přijdete na naši svatbu?</FormLabel>
+                  <FormLabel className="font-bold">Přijdete na naši svatbu?</FormLabel>
                   <FormControl>
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-2">
-                        <FormLabel htmlFor="come-to-wedding-yes">Ano</FormLabel>
+                        <FormLabel className="font-bold" htmlFor="come-to-wedding-yes">
+                          Ano
+                        </FormLabel>
                         <Checkbox
                           id="come-to-wedding-yes"
-                          className="size-6"
+                          className="size-6 border-white"
                           checked={field.value === 'ano'}
                           onCheckedChange={() => field.onChange('ano')}
                         />
                       </div>
                       <div className="flex items-center gap-2">
-                        <FormLabel htmlFor="come-to-wedding-no">Ne</FormLabel>
+                        <FormLabel className="font-bold" htmlFor="come-to-wedding-no">
+                          Ne
+                        </FormLabel>
                         <Checkbox
                           id="come-to-wedding-no"
-                          className="size-6"
+                          className="size-6 border-white"
                           checked={field.value === 'ne'}
                           onCheckedChange={() => field.onChange('ne')}
                         />
@@ -159,25 +163,29 @@ function GuestConfirmationForm() {
               render={({ field }) => {
                 return (
                   <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                    <FormLabel>
-                      Zůstanete přes noc? (Každý si hradí sám. Cena cca 800 Kč / osoba)
+                    <FormLabel className="font-bold">
+                      Zůstanete přes noc? (ubytování bude zajištěno v místě konání svatby)
                     </FormLabel>
                     <FormControl>
                       <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2">
-                          <FormLabel htmlFor="stay-over-night-yes">Ano</FormLabel>
+                          <FormLabel className="font-bold" htmlFor="stay-over-night-yes">
+                            Ano
+                          </FormLabel>
                           <Checkbox
                             id="stay-over-night-yes"
-                            className="size-6"
+                            className="size-6 border-white"
                             checked={field.value === 'ano'}
                             onCheckedChange={() => field.onChange('ano')}
                           />
                         </div>
                         <div className="flex items-center gap-2">
-                          <FormLabel htmlFor="stay-over-night-no">Ne</FormLabel>
+                          <FormLabel className="font-bold" htmlFor="stay-over-night-no">
+                            Ne
+                          </FormLabel>
                           <Checkbox
                             id="stay-over-night-no"
-                            className="size-6"
+                            className="size-6 border-white"
                             checked={field.value === 'ne'}
                             onCheckedChange={() => field.onChange('ne')}
                           />
@@ -190,7 +198,7 @@ function GuestConfirmationForm() {
                         name="pocetDeti"
                         render={({ field }) => (
                           <FormItem className="flex flex-col gap-2">
-                            <FormLabel>Počet dětí</FormLabel>
+                            <FormLabel className="font-bold">Počet dětí</FormLabel>
                             <Input
                               {...field}
                               type="number"
@@ -205,8 +213,8 @@ function GuestConfirmationForm() {
                         control={form.control}
                         name="jmenaDeti"
                         render={({ field }) => (
-                          <FormItem className=" flex flex-col gap-2">
-                            <FormLabel>Jména dětí</FormLabel>
+                          <FormItem className="flex flex-col gap-2">
+                            <FormLabel className="font-bold">Jména dětí</FormLabel>
                             <Input
                               {...field}
                               type="text"
@@ -227,7 +235,7 @@ function GuestConfirmationForm() {
               name="poznamka"
               render={({ field }) => (
                 <FormItem className="flex flex-col items-start gap-4 rounded-md border p-4">
-                  <FormLabel>Poznámka</FormLabel>
+                  <FormLabel className="font-bold">Poznámka</FormLabel>
                   <FormControl>
                     <Textarea className="text-blue" placeholder="Poznámka" {...field} />
                   </FormControl>
@@ -235,7 +243,11 @@ function GuestConfirmationForm() {
               )}
             />
           </div>
-          <Button className="text-2xl" variant="default" type="submit">
+          <Button
+            className="bg-primary cursor-pointer border border-white text-2xl"
+            variant="default"
+            type="submit"
+          >
             {isLoading ? (
               <Spinner />
             ) : (
@@ -246,7 +258,11 @@ function GuestConfirmationForm() {
           </Button>
         </form>
       </Form>
-      {showConfetti && <Confetti width={width} height={height} />}
+      {showConfetti && (
+        <div className="fixed top-0 left-0 z-50">
+          <Confetti width={width} height={height} />
+        </div>
+      )}
     </div>
   )
 }

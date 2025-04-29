@@ -2,11 +2,11 @@
 
 import { SparklesCore } from '@/components/ui/sparkles'
 import { H1 } from '@/components/ui/typography'
-import Image from "next/image"
+import Image from 'next/image'
 
 export const Schedule = () => {
   return (
-    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-md ">
+    <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-md">
       <div className="absolute inset-0 h-screen w-full">
         <SparklesCore
           id="tsparticlesfullpage"
@@ -20,7 +20,7 @@ export const Schedule = () => {
       </div>
       <div className="relative z-20 flex flex-col items-center gap-8">
         <H1 className="uppercase">
-          <span className="underline-offset-3 text-blue decoration-8">Harmonogram</span>
+          <span className="text-blue decoration-8 underline-offset-3">Harmonogram</span>
         </H1>
         <div className="grid grid-cols-1 gap-8">
           {images.map((image) => (
@@ -31,9 +31,10 @@ export const Schedule = () => {
                 height={50}
                 alt={image.name}
                 style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
               <div>
                 <h3 className="font-bold">{image.text}</h3>
                 <p>{image.time}</p>
@@ -49,16 +50,17 @@ export const Schedule = () => {
                 height={50}
                 alt={activity.name}
                 style={{
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
               <h3 className="font-bold">{activity.text}</h3>
             </div>
           ))}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 const images = [
@@ -66,7 +68,7 @@ const images = [
     name: 'heart',
     src: '/heart.svg',
     text: 'Příjezd hostů',
-    time: '12:15-12:30',
+    time: 'do 11:00',
   },
   {
     name: 'rings',
@@ -77,8 +79,8 @@ const images = [
   {
     name: 'camera',
     src: '/camera.svg',
-    text: 'Slavnostní přípitek a společná fotografie',
-    time: '14:00',
+    text: 'Focení a začátek svatebního rautu',
+    time: '13:30',
   },
   {
     name: 'lunch',
@@ -86,19 +88,15 @@ const images = [
     text: 'Slavnostní oběd',
     time: '14:30',
   },
-]
-
-const activities = [
-  {
-    name: 'cake',
-    src: '/cake.svg',
-    text: 'Krájení svatebního dortu',
-  },
   {
     name: 'dance',
     src: '/dance.svg',
-    text: 'První novomanželský tanec',
+    text: 'První tanec novomanželů a slavnostní přípitek',
+    time: '15:00',
   },
+]
+
+const activities = [
   {
     name: 'flower-throw',
     src: '/flower-throw.svg',
@@ -107,12 +105,12 @@ const activities = [
   {
     name: 'toast',
     src: '/toast.svg',
-    text: 'Zábava a hry',
+    text: 'Svatební hru “Rok s novomanželi”',
   },
   {
     name: 'food',
-    src: '/food.svg',
-    text: 'Raut',
+    src: '/beer-pong.svg',
+    text: 'Svatební Beer Pong',
   },
   {
     name: 'party',

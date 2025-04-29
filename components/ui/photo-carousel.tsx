@@ -1,5 +1,5 @@
 'use client'
-import Image from "next/image"
+import Image from 'next/image'
 import {
   Carousel,
   CarouselContent,
@@ -9,12 +9,12 @@ import {
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
 
-// Placeholder image for loading
-const placeholderImage = '/placeholder.jpeg'
+// // Placeholder image for loading
+const placeholderImage = '/1.jpeg'
 
-const images = Array.from({ length: 22 }, (_, index) => ({
+const images = Array.from({ length: 21 }, (_, index) => ({
   name: `${index + 1}`,
-  src: `/${index + 1}.jpeg`,
+  src: `/${index + 1}.jpg`,
 }))
 
 export const PhotoCarousel = () => {
@@ -49,14 +49,15 @@ export const PhotoCarousel = () => {
               // loading="lazy" // Lazy load the images
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               style={{
-                width: "100%",
-                height: "auto"
-              }} />
+                width: '100%',
+                height: 'auto',
+              }}
+            />
           </CarouselItem>
         ))}
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  );
+  )
 }

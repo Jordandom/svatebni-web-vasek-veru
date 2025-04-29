@@ -2,18 +2,18 @@
 
 import CountdownReact, { CountdownRenderProps } from 'react-countdown'
 
-const countdownDate = new Date(2024, 7, 24, 13, 0, 0)
+const countdownDate = new Date(2025, 8, 11, 0, 0, 0)
 
 const Countdown = () => {
   const renderer = ({ days, hours, minutes, seconds, completed }: CountdownRenderProps) => {
     if (completed) {
       // Render a completed state
-      return <>Completed</>
+      return <></>
     } else {
       // Render a countdown
       return (
-        <div className="flex h-full min-h-[20rem] w-full flex-col items-center justify-center bg-countdown-background bg-100% bg-center bg-no-repeat md:h-96">
-          <div className="flex gap-0 px-8 text-2xl tracking-tight text-blue sm:gap-4 sm:px-20 sm:text-8xl">
+        <div className="bg-countdown-background bg-100% flex h-full min-h-[20rem] w-full flex-col items-center justify-center rounded-2xl bg-center bg-no-repeat shadow-[0_10px_50px_rgba(0,0,0,0.3),0_20px_60px_rgba(255,255,255,0.2)]">
+          <div className="text-primary/80 flex gap-0 px-8 text-2xl tracking-tight sm:gap-4 sm:px-20 sm:text-8xl">
             <div className="flex flex-col items-center gap-1 sm:gap-8">
               <h1 className="font-bold">{days}</h1>
               <div className="text-2xl md:text-4xl">Den</div>

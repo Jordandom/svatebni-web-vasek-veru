@@ -9,7 +9,6 @@
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-blue: hsl(var(--blue));
-
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
 
@@ -113,10 +112,11 @@
     --foreground: 240 10% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
-    --blue: 225 27% 38%;
+    --blue: 323 100% 98%;
+    /* 225 27% 38%; */
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 225 27% 38%;
+    --primary: 0 100% 25% /* 225 27% 38%; */;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -139,7 +139,7 @@
   }
   body {
     @apply text-white;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 1%, rgba(90, 134, 173, 1) 50%);
+    background: linear-gradient(180deg, #c5a5a5 1%, #671313 50%);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
