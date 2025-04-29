@@ -1,4 +1,4 @@
-import { Hero } from '@/components/layout/hero'
+// import { Hero } from '@/components/layout/hero'
 import { PhotoCarousel } from '@/components/ui/photo-carousel'
 import { TracingBeam } from '@/components/ui/tracing-beam'
 import { Schedule } from '@/components/layout/schedule'
