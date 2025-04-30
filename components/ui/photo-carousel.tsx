@@ -12,7 +12,7 @@ import Autoplay from 'embla-carousel-autoplay'
 // // Placeholder image for loading
 const placeholderImage = '/1.jpeg'
 
-const images = Array.from({ length: 21 }, (_, index) => ({
+const images = Array.from({ length: 23 }, (_, index) => ({
   name: `${index + 1}`,
   src: `/${index + 1}.jpg`,
 }))
